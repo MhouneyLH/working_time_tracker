@@ -4,11 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Infrastructure</RootNamespace>
+    <RootNamespace>Domain</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="../Domain/Domain.csproj" />
-  </ItemGroup>
 
 </Project>

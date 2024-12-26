@@ -1,6 +1,33 @@
 ﻿@page "/"
 @rendermode InteractiveServer
+@inject IWorkingSessionService _workingSessionService
 
 <PageTitle>Home</PageTitle>
 
-<CircleButton />
+<CircleButton WorkingToggled=OnWorkingToggled />
+@if (pendingWorkingSession != null)
+{
+  <h3>@($"Working... {pendingWorkingSession.WorkingDuration.Hours}h {pendingWorkingSession.WorkingDuration.Minutes}min")
+</h3>
+}
+else
+{
+  <h3>Not Working</h3>
+}
+
+@code {
+  PendingWorkingSession? pendingWorkingSession = null;
+
+  private async void OnWorkingToggled(bool working)
+  {
+    if (working)
+    {
+      pendingWorkingSession = await _workingSessionService.StartWorkingSessionAsync();
+      return;
+    }
+
+    pendingWorkingSession = null;
+
+    Console.WriteLine("Not Working");
+  }
+}
