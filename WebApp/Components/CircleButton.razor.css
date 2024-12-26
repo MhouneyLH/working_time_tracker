@@ -1,0 +1,25 @@
+.circle-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #1d3557; /* Dark turquoise background */
+    color: #06d6a0; /* Bright turquoise text */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.circle-button:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    background-color: #2a9d8f; /* Lighter turquoise */
+}
+
+.circle-button:active {
+    transform: scale(0.9); /* Shrink on click */
+    background-color: #264653; /* Even darker turquoise */
+}
